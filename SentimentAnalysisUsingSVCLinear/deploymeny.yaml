@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sentiment-gke2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mlclassifier
+  template:
+    metadata:
+      labels:
+        app: mlclassifier
+    spec:
+      containers:
+        - name: saflask
+          image: gcr.io/symbolic-axe-299601/feb28saflask-gke
+          ports:
+          - containerPort: 8080
+          env:
+          - name: PORT 
+            value: "8080"
