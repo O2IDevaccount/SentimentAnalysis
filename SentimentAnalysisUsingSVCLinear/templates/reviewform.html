@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+ <head>
+ <title>Email Sentiment Classification</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ </head>
+ <body>
+<h2>Please enter your email:</h2>
+<form method=post action="/results">
+ <dl>
+ {% from '_formhelpers.html' import render_field %}
+ {{ render_field(form.moviereview, cols='30', rows='10') }}
+
+
+ </dl>
+ <div class=big align=center>
+ <input type=submit value='Submit email' name='submit_btn' class="button button-info">
+ </div>
+</form>
+</body>
+</html>

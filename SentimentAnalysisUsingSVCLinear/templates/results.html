@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+ <head>
+ <title>Email Sentiment Classification</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ </head>
+ <body>
+<h3>Your Email:</h3>
+<div align=center>{{ content }}</div>
+<h3>Prediction:</h3>
+<div align=center>This email is <strong>{{ prediction }}</strong>
+ (probability: {{ probability }}%).</div>
+<div id='button'>
+ <form action="/">
+ <input type=submit value='Submit another email' class="button button-info">
+ </form>
+</div>
+</body>
+</html>
